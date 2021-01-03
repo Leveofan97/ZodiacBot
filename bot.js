@@ -1,6 +1,6 @@
 import Telegraf from 'telegraf'
 import covidApi from 'covid19-api'
-const bot = new Telegraf('1472312554:AAH_CT2GoTdSsYMdPGRLmdgG2bFvz916BDU') //сюда помещается токен, который дал botFather
+const bot = new Telegraf('1472312554:AAH_CT2GoTdSsYMdPGRLmdgG2bFvz916BDU')
 import { getMainMenu } from './keyboard.js'
 
 bot.start( ctx => ctx.reply(`
@@ -10,7 +10,7 @@ bot.start( ctx => ctx.reply(`
    Получить весь список стран можно по команде /help."
 `))
 
-bot.help( ctx => ctx.reply('Выбери из списка страну', getMainMenu())) // список всех стран на английском языке можно взять в документации covid19-api
+bot.help( ctx => ctx.reply('Выбери из списка страну', getMainMenu()))
 bot.on('text', async (ctx) => {
     try {
         const userText = ctx.message.text
